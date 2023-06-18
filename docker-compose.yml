@@ -1,0 +1,19 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  notepad-ui:
+    image: dockerized-react
+    container_name: notepad-ui
+    ports:
+      - 3000:3000
+    environment:
+      REACT_APP_AUTH0_DOMAIN: dev-xvpzzik4afgfqb5p.us.auth0.com
+      REACT_APP_AUTH0_CLIENT_ID: gwyLsggP29ztdagYmgzVwv82XGIM3NdS
+      REACT_APP_AUTH0_CALLBACK_URL: http://localhost:3000/callback
+      REACT_APP_AUTH0_AUDIENCE: notepad-gateway
+      REACT_APP_API_SERVER_URL: https://s4.zserg.net/ng
+
+
+
