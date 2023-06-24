@@ -11,7 +11,7 @@ export const NavBarTabs = () => {
       {isAuthenticated && (
         <>
           <NavBarTab path="/flashcard" label="Flashcard" />
-          <NavBarTab path="/protected" label="Expenses" />
+          <NavBarTab path="/expenses" label="Expenses" />
         </>
       )}
     </div>
