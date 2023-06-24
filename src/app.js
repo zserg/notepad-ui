@@ -3,13 +3,12 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { PageLoader } from "./components/page-loader";
 import { AuthenticationGuard } from "./components/authentication-guard";
-import { AdminPage } from "./pages/admin-page";
 import { CallbackPage } from "./pages/callback-page";
 import { HomePage } from "./pages/home-page";
 import { NotFoundPage } from "./pages/not-found-page";
 import { ProfilePage } from "./pages/profile-page";
 import { ExpensesPage } from "./pages/expenses-page";
-import { PublicPage } from "./pages/public-page";
+import { FlashcardPage } from "./pages/flashcard-page";
 
 export const App = () => {
   const { isLoading } = useAuth0();
@@ -29,14 +28,10 @@ export const App = () => {
         path="/profile"
         element={<AuthenticationGuard component={ProfilePage} />}
       />
-      <Route path="/public" element={<PublicPage />} />
+      <Route path="/flashcard" element={<FlashcardPage />} />
       <Route
         path="/protected"
         element={<AuthenticationGuard component={ExpensesPage} />}
-      />
-      <Route
-        path="/admin"
-        element={<AuthenticationGuard component={AdminPage} />}
       />
       <Route path="/callback" element={<CallbackPage />} />
       <Route path="*" element={<NotFoundPage />} />
