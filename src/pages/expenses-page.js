@@ -26,6 +26,7 @@ export const ExpensesPage = () => {
         }
         const result =  await getProtectedResource("expenses/summary", accessToken);
         if (result.data) {
+
             setExpensesSummary(result.data);
         }
         if (result.error) {
